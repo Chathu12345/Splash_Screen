@@ -1,5 +1,7 @@
+import 'package:animated_splash_screen/animated_splash_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:splash_screen/Splash.dart';
+import 'package:splash_screen/home.dart';
 
 void main() {
   runApp(const MyApp());
@@ -25,8 +27,30 @@ class MyApp extends StatelessWidget {
         // is not restarted.
         primarySwatch: Colors.blue,
       ),
-      home: Splash(),
-    );
+      home: AnimatedSplashScreen(
+        splash: Icons.anchor,
+        duration: 4000, 
+        splashTransition: SplashTransition.decoratedBoxTransition,
+        backgroundColor: Colors.blue,
+        nextScreen: MyHomePage(title: 'GFG')),
+        // Center(
+        // child: Column(
+        //   mainAxisAlignment: MainAxisAlignment.center,
+        //   children: [
+        //     Container(
+        //       height: 100, 
+        //       width: 100, 
+        //       color: Colors.blue,
+        //       ),
+        //     Container(
+        //       child: Text(
+        //         'Splash Screen', 
+        //         style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
+        //      ),
+        //     ),
+        //   ],
+        // ),
+      );
   }
 }
 
